@@ -51,10 +51,18 @@ const ExpenseForm = (props) => {
       date: new Date(enteredDate),
     };
     props.onSaveExpenseData(expenseData);
+    //console.log(expenseData)
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
+
+    props.onCancel();
   };
+
+  const stopEditingHandler = () => {
+    props.onCancel();
+  }
+  
 
   return (
     <form onSubmit={submitHandler}>
@@ -91,6 +99,7 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="button" onClick={stopEditingHandler}>Cancel</button>
         <button type="submit">Add Expense</button>
       </div>
     </form>

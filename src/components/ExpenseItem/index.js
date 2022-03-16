@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './app.css'
 import ExpenseDate from './ExpenseDate';
 import Card from '../Card';
